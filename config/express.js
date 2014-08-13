@@ -3,6 +3,9 @@
 /**
  * Module dependencies.
  */
+
+console.log ('hbkk server side only in C:/140810NodeUsToDoA/config/express.js')
+
 var express = require('express'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),

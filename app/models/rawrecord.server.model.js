@@ -16,6 +16,13 @@ var RawrecordSchema = new Schema({
 		required: 'Please fill Rawrecord name',
 		trim: true
 	},
+//    hbkk
+    hkproperty: {
+        type: String,
+        default: '',
+        required: 'Please fill Rawrecord hkproperty',
+        trim: true
+    },
 	created: {
 		type: Date,
 		default: Date.now

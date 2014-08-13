@@ -12,5 +12,15 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
 		});
+
+
+        // hbkk Homehk state routing routes
+        $stateProvider.
+            state('homehk', {
+                url: '/hk',
+                templateUrl: 'modules/core/views/homehk.client.view.html'
+            });
+
+
 	}
 ]);
