@@ -1,6 +1,9 @@
 'use strict';
 
+// hbkk C:\140812NodeUsToDoA\config\env\development.js
+
 module.exports = {
+    // hbkk says db: 'mongodb://localhost/ustodo-dev'
 	db: 'mongodb://localhost/ustodo-dev',
 	app: {
 		title: 'UsToDo - Development Environment'
