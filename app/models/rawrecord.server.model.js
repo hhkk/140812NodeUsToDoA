@@ -20,7 +20,7 @@ var RawrecordSchema = new Schema({
     hkproperty: {
         type: String,
         default: '',
-        required: 'Please fill Rawrecord hkproperty',
+        //required: 'Please fill Rawrecord hkproperty',
         trim: true
     },
 	created: {

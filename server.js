@@ -11,7 +11,7 @@ var init = require('./config/init')(),
  * Please note that the order of loading is important.
  */
 
-// Bootstrap db connection
+// BootstrchangeUserPasswordap db connection
 var db = mongoose.connect(config.db, function(err) {
 	if (err) {
 		console.error('\x1b[31m', 'Could not connect to MongoDB!');
@@ -32,4 +32,4 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('MEAN.JS application started on port ' + config.port);
+console.log('hbkk MEAN.JS application started on port ' + config.port);

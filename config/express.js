@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-console.log ('hbkk server side only in C:/140810NodeUsToDoA/config/express.js');
+console.log ('hbkk EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
 
 var express = require('express'),
 	morgan = require('morgan'),

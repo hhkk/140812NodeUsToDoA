@@ -9,7 +9,7 @@ angular.module('rawrecords').controller('RawrecordsController', ['$scope', '$sta
 		$scope.create = function() {
 			// Create new Rawrecord object
 			var rawrecord = new Rawrecords ({
-				name: this.name
+				name: "HBKK:" + this.name
 			});
 
 			// Redirect after save
