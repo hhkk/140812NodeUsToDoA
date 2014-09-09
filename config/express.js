@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-console.log ('hbkk EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
+console.log ('hbkk fromconfig/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
 
 var express = require('express'),
 	morgan = require('morgan'),
@@ -25,11 +25,12 @@ var express = require('express'),
 
 module.exports = function(db) {
 	// Initialize express app
-	var app = express();
+	var app = express();     // hbkk
 
 	// Globbing model files
 	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
 		require(path.resolve(modelPath));
+        console.log('hbkk in config/express.js required path:' + modelPath);
 	});
 
 	// Setting application local variables

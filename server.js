@@ -32,4 +32,41 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('hbkk MEAN.JS application started on port ' + config.port);
+console.log('hbkk from /server.js MEAN.JS application started on port ' + config.port);
+
+console.log('app.routes:' + app.routes);
+console.log('app._router.stack:' + app._router.stack);
+
+
+var logRoutes = function() { // hbkk
+// was var routes = app.routes;
+    var routes = app._router.stack;
+    for (var verb in routes){
+
+        var name = 'N.A.';
+        var regexp = 'N.A.';
+        var path = 'N.A.';
+
+        if(routes[verb]['name']!==undefined)     {name = routes[verb]['name'];}
+        if(routes[verb]['regexp']!==undefined)   {regexp=routes[verb]['regexp'];}
+        if(routes[verb]['route']!==undefined && routes[verb]['route']['path']!==undefined)
+        {
+            path=routes[verb]['route']['path'];
+        }
+
+        console.log ('route #:' + verb + ', regexp:'+routes[verb].regexp +
+                ', name:'+name +
+                ', regexp:'+regexp +
+                ', route.path:'+path
+        );
+        //    if (routes.hasOwnProperty(verb)) {
+        //        routes[verb].forEach(function(route){
+        //            console.log(verb + " : "+route['path']);
+        //        });
+        //    }
+    }
+}
+
+logRoutes();
+
+
