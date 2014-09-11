@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-console.log ('hbkk fromconfig/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
+console.log ('hbkk in config/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
 
 var express = require('express'),
 	morgan = require('morgan'),
@@ -25,7 +25,15 @@ var express = require('express'),
 
 module.exports = function(db) {
 	// Initialize express app
-	var app = express();     // hbkk
+	var app = express();     // hbkk app 2 not hit
+
+    // HBKK  adds
+    app.use(function(req, res, next){
+        //console.log(Date.now + '-- hbkk app.use function %s %s', req.method, req.url);
+        console.log('-- hbkk app.use function %s %s', req.method, req.url);
+        next();         // jump to next route handler
+    });
+
 
 	// Globbing model files
 	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
@@ -44,6 +52,7 @@ module.exports = function(db) {
 	// Passing the request url to environment locals
 	app.use(function(req, res, next) {
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
+        console.log (')))hbkkk res.locals.url [' + res.locals.url + '] from within C: 140812NodeUsToDoA config express.js');
 		next();
 	});
 

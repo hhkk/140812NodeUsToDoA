@@ -20,7 +20,7 @@ var db = mongoose.connect(config.db, function(err) {
 });
 
 // Init the express application
-var app = require('./config/express')(db);
+var app = require('./config/express')(db);     // hbkk app 1 gets hit
 
 // Bootstrap passport config
 require('./config/passport')();
@@ -32,10 +32,27 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('hbkk from /server.js MEAN.JS application started on port ' + config.port);
+console.log('--------> hbkk from /server.js MEAN.JS application started on port ' + config.port);
 
-console.log('app.routes:' + app.routes);
-console.log('app._router.stack:' + app._router.stack);
+// from http://stackoverflow.com/questions/15690706/recursively-looping-through-an-object-to-build-a-property-list
+function iterate(obj, stack, recurse) {
+    if (recurse > 0)
+    {
+        console.log ("hit > 0");
+    }
+    for (var property in obj) {
+        if (obj.hasOwnProperty(property)) {
+            if (typeof obj[property] == "object") {
+                iterate(obj[property], stack + '.' + property, recurse+1);
+            } else {
+                console.log('hbkk iterate level [' + recurse + ':' + stack + ':' +
+                    property + ':' + obj[property]);
+                //$('#output').append($("<div/>").text(stack + '.' + property))
+            }
+        }
+    }
+}
+
 
 
 var logRoutes = function() { // hbkk
@@ -54,11 +71,14 @@ var logRoutes = function() { // hbkk
             path=routes[verb]['route']['path'];
         }
 
-        console.log ('route #:' + verb + ', regexp:'+routes[verb].regexp +
+        console.log ('================= route #:' + verb +
                 ', name:'+name +
                 ', regexp:'+regexp +
                 ', route.path:'+path
         );
+
+        //iterate (routes[verb], '', 0);
+
         //    if (routes.hasOwnProperty(verb)) {
         //        routes[verb].forEach(function(route){
         //            console.log(verb + " : "+route['path']);
