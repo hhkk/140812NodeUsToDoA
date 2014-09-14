@@ -3,8 +3,7 @@
 // hbkk C:\140812NodeUsToDoA\config\env\development.js
 
 module.exports = {
-    // hbkk says db: 'mongodb://localhost/ustodo-dev'
-	db: 'mongodb://localhost/ustodo-dev',
+	db: 'mongodb://localhost/ustodo-dev',     // hbkk mongo
 	app: {
 		title: 'UsToDo - Development Environment'
 	},

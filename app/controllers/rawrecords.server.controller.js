@@ -15,7 +15,7 @@ var mongoose = require('mongoose'),
  */
 exports.create = function (req, res) {
     console.log('hbkk in exports.create C: 140812NodeUsToDoA app controllers rawrecords.server.controller.js');
-    var rawrecord = new Rawrecord(req.body);
+    var rawrecord = new Rawrecord(req.body);       //hbkk rawrecord new record
     rawrecord.user = req.user;
     rawrecord.save(function (err) {
         if (err) {
@@ -64,7 +64,7 @@ exports.delete = function (req, res) {
     console.log('hbkk in exports.delete C: 140812NodeUsToDoA app controllers rawrecords.server.controller.js');
     var rawrecord = req.rawrecord;
 
-    rawrecord.remove(function (err) {
+                rawrecord.remove(function (err) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)

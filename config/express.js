@@ -29,8 +29,8 @@ module.exports = function(db) {
 
     // HBKK  adds
     app.use(function(req, res, next){
-        //console.log(Date.now + '-- hbkk app.use function %s %s', req.method, req.url);
-        console.log('-- hbkk app.use function %s %s', req.method, req.url);
+        console.log(new Date().toUTCString() + '-- \'hbkk app.use\' function %s %s', req.method, req.url);
+        //console.log('-- hbkk app.use function %s %s', req.method, req.url);
         next();         // jump to next route handler
     });
 

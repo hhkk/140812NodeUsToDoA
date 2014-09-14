@@ -61,5 +61,9 @@ angular.module('rawrecords').controller('RawrecordsController', ['$scope', '$sta
 				rawrecordId: $stateParams.rawrecordId
 			});
 		};
+
+        setTimeout(function(){
+            console.log ("after timer output comes");
+        }, 2000);
 	}
 ]);

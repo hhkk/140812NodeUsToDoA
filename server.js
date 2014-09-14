@@ -11,7 +11,7 @@ var init = require('./config/init')(),
  * Please note that the order of loading is important.
  */
 
-// BootstrchangeUserPasswordap db connection
+// // hbkk mongo BootstrchangeUserPasswordap db connection
 var db = mongoose.connect(config.db, function(err) {
 	if (err) {
 		console.error('\x1b[31m', 'Could not connect to MongoDB!');
