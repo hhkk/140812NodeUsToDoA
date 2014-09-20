@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-console.log ('hbkk in config/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
+console.log ('hbkk dir in config/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
 
 var express = require('express'),
 	morgan = require('morgan'),
@@ -25,7 +25,7 @@ var express = require('express'),
 
 module.exports = function(db) {
 	// Initialize express app
-	var app = express();     // hbkk app 2 not hit
+	var app = express();     // hbkk dir app 2 not hit
 
     // HBKK  adds
     app.use(function(req, res, next){
@@ -50,9 +50,9 @@ module.exports = function(db) {
 	app.locals.cssFiles = config.getCSSAssets();
 
 	// Passing the request url to environment locals
-	app.use(function(req, res, next) {
+	app.use(function(req, res, next)  // hbkk dir route next #1
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
-        console.log (')))hbkkk res.locals.url [' + res.locals.url + '] from within C: 140812NodeUsToDoA config express.js');
+        console.log (')))hbkkk dir config express.js res.locals.url [' + res.locals.url + '] from within C: 140812NodeUsToDoA config express.js');
 		next();
 	});
 

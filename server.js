@@ -71,7 +71,7 @@ var logRoutes = function() { // hbkk
             path=routes[verb]['route']['path'];
         }
 
-        console.log ('================= route #:' + verb +
+        console.log ('================= route #:' + verb + // hbkk dir list routes
                 ', name:'+name +
                 ', regexp:'+regexp +
                 ', route.path:'+path

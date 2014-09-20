@@ -2,6 +2,8 @@
 
 module.exports = function(app) {
 	// Root routing
-	var core = require('../../app/controllers/core');
-	app.route('/').get(core.index);
+    var hktestRequire = require('../../app/controllers/hktestRequire');
+    var core = require('../../app/controllers/core');
+    app.route('/hktestRequire').get(hktestRequire.index);
+    app.route('/').get(core.index);
 };

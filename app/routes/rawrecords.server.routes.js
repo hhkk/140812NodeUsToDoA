@@ -15,5 +15,6 @@ module.exports = function(app) {
 		.delete(users.requiresLogin, rawrecords.hasAuthorization, rawrecords.delete);
 
 	// Finish by binding the Rawrecord middleware
-	app.param('rawrecordId', rawrecords.rawrecordByID);
+
+    app.param('rawrecordId', rawrecords.rawrecordByID);
 };
