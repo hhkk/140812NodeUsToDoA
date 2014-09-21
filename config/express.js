@@ -50,7 +50,7 @@ module.exports = function(db) {
 	app.locals.cssFiles = config.getCSSAssets();
 
 	// Passing the request url to environment locals
-	app.use(function(req, res, next)  // hbkk dir route next #1
+	app.use(function(req, res, next) {  // hbkk dir route next #1
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
         console.log (')))hbkkk dir config express.js res.locals.url [' + res.locals.url + '] from within C: 140812NodeUsToDoA config express.js');
 		next();
