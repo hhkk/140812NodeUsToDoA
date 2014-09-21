@@ -24,11 +24,15 @@ var db = mongoose.connect(config.db, function(err) {
 // BEGIN: EXPERIMENT WITH MY OWN EXPORTS
         var utilfile = require('./public/modules/core/util/utdv20utilfile2');     // hbkk app 1 gets hit
         //var utilfile = require('./public/modules/core/util/utdv20utilfile2')("HI HK TEST REQUIRE");     // hbkk app 1 gets hit
+
         console.log('utilfile.answer:'+utilfile.answer); // 1
         console.log(utilfile.getCount()); // 1
         utilfile.increment();
         console.log(utilfile.getCount()); // 2
+
+utilfile.testWrite("ppp");
 // END: EXPERIMENT WITH MY OWN EXPORTS
+// this guy says try classes
 
 
 
