@@ -20,7 +20,24 @@ var db = mongoose.connect(config.db, function(err) {
 });
 
 // Init the express application
+
+// BEGIN: EXPERIMENT WITH MY OWN EXPORTS
+        var utilfile = require('./public/modules/core/util/utdv20utilfile2');     // hbkk app 1 gets hit
+        //var utilfile = require('./public/modules/core/util/utdv20utilfile2')("HI HK TEST REQUIRE");     // hbkk app 1 gets hit
+        console.log('utilfile.answer:'+utilfile.answer); // 1
+        console.log(utilfile.getCount()); // 1
+        utilfile.increment();
+        console.log(utilfile.getCount()); // 2
+// END: EXPERIMENT WITH MY OWN EXPORTS
+
+
+
 var app = require('./config/express')(db);     // hbkk app 1 gets hit
+
+// C:\140812NodeUsToDoA\public\modules\core\util\utd-v2.0-util-file.js
+
+//utilfile.xx()
+
 
 // Bootstrap passport config
 require('./config/passport')();

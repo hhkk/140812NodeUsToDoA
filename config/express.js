@@ -25,7 +25,7 @@ var express = require('express'),
 
 module.exports = function(db) {
 	// Initialize express app
-	var app = express();     // hbkk dir app 2 not hit
+    var app = express();     // hbkk dir app 2 not hit
 
     // HBKK  adds
     app.use(function(req, res, next){
@@ -155,3 +155,4 @@ module.exports = function(db) {
 
 	return app;
 };
+
