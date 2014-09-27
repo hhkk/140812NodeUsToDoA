@@ -1,5 +1,7 @@
 'use strict';
 
+var o = projRequire('/public/modules/core/util/o');     // hbkk app 1 gets hit
+
 //hbkk crud rawrecords controller
 
 /**
@@ -95,7 +97,7 @@ exports.list = function (req, res) {
  * Rawrecord middleware
  */
 exports.rawrecordByID = function (req, res, next, id) {
-    console.log('hbkk in exports.rawrecordByID C: 140812NodeUsToDoA app controllers rawrecords.server.controller.js');
+    o.o('hbkk in exports.rawrecordByID C: 140812NodeUsToDoA app controllers rawrecords.server.controller.js');
     Rawrecord.findById(id).populate('user', 'displayName').exec(function (err, rawrecord) {
         if (err) return next(err);
         if (!rawrecord) return next(new Error('Failed to load Rawrecord ' + id));

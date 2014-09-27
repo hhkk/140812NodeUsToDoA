@@ -1,10 +1,25 @@
 'use strict';
 
+// init projRequire
+require('../projRequire');
+// projRequire('/lib/lol');
+console.log('hk1');
+var o = projRequire('/public/modules/core/util/o'); // C:\140812NodeUsToDoA\public\modules\core\util
+console.log('hk2');
+o.o('hk3');
+
+
+
+var o = require('../public/modules/core/util/o');     // hbkk app 1 gets hit
+var utilClass = require('../public/modules/core/utiljs/UtilClass');     // hbkk app 1 gets hit
+
+
+o.o ('express.js start');
 /**
  * Module dependencies.
  */
 
-console.log ('hbkk dir in config/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
+o.o ('hbkk dir in config/express.js EXPRESS BEGINPROGRAM STARTHERE server side only in C:/140810NodeUsToDoA/config/express.js');
 
 var express = require('express'),
 	morgan = require('morgan'),
@@ -23,13 +38,14 @@ var express = require('express'),
 	consolidate = require('consolidate'),
 	path = require('path');
 
+var callCountAppUse = 0;
 module.exports = function(db) {
 	// Initialize express app
     var app = express();     // hbkk dir app 2 not hit
 
     // HBKK  adds
     app.use(function(req, res, next){
-        console.log(new Date().toUTCString() + '-- \'hbkk app.use\' function %s %s', req.method, req.url);
+        //o.o(new Date().toUTCString() + '-- \'hbkk app.use\' function %s %s', req.method, req.url);
         //console.log('-- hbkk app.use function %s %s', req.method, req.url);
         next();         // jump to next route handler
     });
@@ -38,7 +54,7 @@ module.exports = function(db) {
 	// Globbing model files
 	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
 		require(path.resolve(modelPath));
-        console.log('hbkk in config/express.js required path:' + modelPath);
+        o.o('hbkk in config/express.js required path:' + modelPath);
 	});
 
 	// Setting application local variables
@@ -52,7 +68,22 @@ module.exports = function(db) {
 	// Passing the request url to environment locals
 	app.use(function(req, res, next) {  // hbkk dir route next #1
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
-        console.log (')))hbkkk dir config express.js res.locals.url [' + res.locals.url + '] from within C: 140812NodeUsToDoA config express.js');
+        // see http://expressjs.com/api.html
+        o.o('hbkkk 3 dir app.use ' +
+            ' req.method ['+req.method + ']' +
+            ' req.res.locals.url [' + req.res.locals.url + ']' +
+            ' res.locals.url [' + res.locals.url + ']' +
+            ' res.originalUrl [' + req.originalUrl + ']' +
+            ' res.subdomains [' + req.subdomains+ ']' +
+            ' req.protocol ['+req.protocol + ']' +
+            ' req.path ['+req.path + ']' +
+            ' req.hostname ['+req.hostname + ']' +
+            ' req.baseUrl ['+req.baseUrl + ']' +
+            ' req.params ['+req.params + ']' +
+            ' req.params[0] ['+req.params[0] + ']' +
+            ' req.get(host) ['+ req.get('host') + ']'
+        );
+        //o.o ('hbkk utilClass.getClass(req): ' + utilClass.getClass(req));
 		next();
 	});
 

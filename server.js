@@ -2,9 +2,15 @@
 /**
  * Module dependencies.
  */
+var util = require('util');
+
+var o = require('./public/modules/core/util/o');     // hbkk app 1 gets hit
+o.o("Server.js program start");
+
+
 var init = require('./config/init')(),
-	config = require('./config/config'),
-	mongoose = require('mongoose');
+    config = require('./config/config'),
+    mongoose = require('mongoose');
 
 /**
  * Main application entry file.
@@ -13,35 +19,25 @@ var init = require('./config/init')(),
 
 // // hbkk mongo BootstrchangeUserPasswordap db connection
 var db = mongoose.connect(config.db, function(err) {
-	if (err) {
-		console.error('\x1b[31m', 'Could not connect to MongoDB!');
-		console.log(err);
-	}
+    if (err) {
+        o.oErr('\x1b[31m', 'Could not connect to MongoDB!');
+        o.oErr('error connecting to mongoose', err);
+    }
 });
 
+require('./public/modules/core/util/o.js');
 // Init the express application
 
 // BEGIN: EXPERIMENT WITH MY OWN EXPORTS
-        var utilfile = require('./public/modules/core/util/utdv20utilfile2');     // hbkk app 1 gets hit
-        //var utilfile = require('./public/modules/core/util/utdv20utilfile2')("HI HK TEST REQUIRE");     // hbkk app 1 gets hit
+var utilFile = require('./public/modules/core/util/utilFile');     // hbkk app 1 gets hit
+//var utilFile = require('./public/modules/core/util/utdv20utilfile2')("HI HK TEST REQUIRE");     // hbkk app 1 gets hit
 
-        console.log('utilfile.answer:'+utilfile.answer); // 1
-        console.log(utilfile.getCount()); // 1
-        utilfile.increment();
-        console.log(utilfile.getCount()); // 2
-
-utilfile.testWrite("ppp");
+o.o("Server.js program start");
 // END: EXPERIMENT WITH MY OWN EXPORTS
 // this guy says try classes
 
 
-
 var app = require('./config/express')(db);     // hbkk app 1 gets hit
-
-// C:\140812NodeUsToDoA\public\modules\core\util\utd-v2.0-util-file.js
-
-//utilfile.xx()
-
 
 // Bootstrap passport config
 require('./config/passport')();
@@ -53,20 +49,20 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('--------> hbkk from /server.js MEAN.JS application started on port ' + config.port);
+o.o('--------> hbkk from /server.js MEAN.JS application started on port ' + config.port);
 
 // from http://stackoverflow.com/questions/15690706/recursively-looping-through-an-object-to-build-a-property-list
 function iterate(obj, stack, recurse) {
     if (recurse > 0)
     {
-        console.log ("hit > 0");
+        o.o ("hit > 0");
     }
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
             if (typeof obj[property] == "object") {
                 iterate(obj[property], stack + '.' + property, recurse+1);
             } else {
-                console.log('hbkk iterate level [' + recurse + ':' + stack + ':' +
+                o.o('hbkk iterate level [' + recurse + ':' + stack + ':' +
                     property + ':' + obj[property]);
                 //$('#output').append($("<div/>").text(stack + '.' + property))
             }
@@ -92,7 +88,7 @@ var logRoutes = function() { // hbkk
             path=routes[verb]['route']['path'];
         }
 
-        console.log ('================= route #:' + verb + // hbkk dir list routes
+        o.o ('     route #:' + verb + // hbkk dir list routes
                 ', name:'+name +
                 ', regexp:'+regexp +
                 ', route.path:'+path
