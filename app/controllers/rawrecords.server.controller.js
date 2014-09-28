@@ -1,6 +1,6 @@
 'use strict';
 
-var o = projRequire('/public/modules/core/util/o');     // hbkk app 1 gets hit
+var o = projRequire('/public/lib/ustodo/o.js');     // hbkk app 1 gets hit
 
 //hbkk crud rawrecords controller
 

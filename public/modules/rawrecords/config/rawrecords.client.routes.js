@@ -10,7 +10,7 @@ angular.module('rawrecords').config(['$stateProvider',
 			templateUrl: 'modules/rawrecords/views/angview-rawrecord.client.view.html'
 		}).
 		state('listRawrecords', {
-			url: '/rawrecords',
+			url: '/rawrecords', // hbkkk
 			templateUrl: 'modules/rawrecords/views/list-rawrecords.client.view.html'
 		}).
 		state('createRawrecord', {

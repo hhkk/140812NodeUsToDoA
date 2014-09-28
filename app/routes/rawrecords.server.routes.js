@@ -1,15 +1,29 @@
 'use strict';
-var o = projRequire('/public/modules/core/util/o');     // hbkk app 1 gets hit
+var o = projRequire('/public/lib/ustodo/o');     // hbkk app 1 gets hit
 
 module.exports = function(app) {
 	var users = require('../../app/controllers/users');
 	var rawrecords = require('../../app/controllers/rawrecords');
 
-	// Rawrecords Routes
-	app.route('/rawrecords')
-		.get(rawrecords.list)
-		.post(users.requiresLogin, rawrecords.create);
+//    app.route('/rawrecords')
+//        .all(function(req, res, next) {
+//            console.log (" ---------------- you made it ck 1a1 !!!!");
+//            o.o (" ---------------- you made it ck 1a2 !!!!");
+//            res.send('Hello World bk');
+//            o.o (" ---------------- you made it ck 1b !!!!");
+//            // runs for all HTTP verbs first
+//            // think of it as route specific middleware!
+//        });
 
+	// Rawrecords Routes
+    app.route('/rawrecords')
+        .get(rawrecords.list)
+        .post(users.requiresLogin, rawrecords.create);
+
+//    app.route('/rawrecords')  // hbkkk
+//        .get(rawrecords.list)
+//        .post(users.requiresLogin, rawrecords.create);
+//
     // hbkk dir rawrecordscust route test
 
     app.route('/rawrecordscust')
@@ -17,7 +31,7 @@ module.exports = function(app) {
             console.log (" ---------------- you made it hk 1a1 !!!!");
             o.o (" ---------------- you made it hk 1a2 !!!!");
             res.send('Hello World bk');
-            console.log (" ---------------- you made it hk 1b !!!!");
+            o.o (" ---------------- you made it hk 1b !!!!");
             // runs for all HTTP verbs first
             // think of it as route specific middleware!
         })

@@ -2,9 +2,14 @@
 /**
  * Module dependencies.
  */
+// init projRequire
+require('./projRequire');
+// projRequire('/lib/lol');
+
+
 var util = require('util');
 
-var o = require('./public/modules/core/util/o');     // hbkk app 1 gets hit
+var o = projRequire('/public/lib/ustodo/o');     // hbkk app 1 gets hit
 o.o("Server.js program start");
 
 
@@ -25,11 +30,11 @@ var db = mongoose.connect(config.db, function(err) {
     }
 });
 
-require('./public/modules/core/util/o.js');
+projRequire('/public/lib/ustodo/o.js');
 // Init the express application
 
 // BEGIN: EXPERIMENT WITH MY OWN EXPORTS
-var utilFile = require('./public/modules/core/util/utilFile');     // hbkk app 1 gets hit
+var utilFile = projRequire('/public/lib/ustodo/utilFileX');     // hbkk app 1 gets hit
 //var utilFile = require('./public/modules/core/util/utdv20utilfile2')("HI HK TEST REQUIRE");     // hbkk app 1 gets hit
 
 o.o("Server.js program start");

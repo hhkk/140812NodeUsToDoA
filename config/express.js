@@ -1,17 +1,12 @@
 'use strict';
 
-// init projRequire
-require('../projRequire');
-// projRequire('/lib/lol');
-console.log('hk1');
-var o = projRequire('/public/modules/core/util/o'); // C:\140812NodeUsToDoA\public\modules\core\util
-console.log('hk2');
-o.o('hk3');
+var o = projRequire('/public/lib/ustodo/o'); // C:\140812NodeUsToDoA\public\modules\core\util
+o.o('projRequire load done');
 
 
 
-var o = require('../public/modules/core/util/o');     // hbkk app 1 gets hit
-var utilClass = require('../public/modules/core/utiljs/UtilClass');     // hbkk app 1 gets hit
+//var o = require('../public/modules/core/util/o');     // hbkk app 1 gets hit
+var utilClass = projRequire('/public/lib/ustodo/UtilClass');     // hbkk app 1 gets hit
 
 
 o.o ('express.js start');
@@ -45,7 +40,7 @@ module.exports = function(db) {
 
     // HBKK  adds
     app.use(function(req, res, next){
-        //o.o(new Date().toUTCString() + '-- \'hbkk app.use\' function %s %s', req.method, req.url);
+        //o.o(new Date().toUTCString() + '-- hbkk app.use function %s %s', req.method, req.url);
         //console.log('-- hbkk app.use function %s %s', req.method, req.url);
         next();         // jump to next route handler
     });
@@ -69,19 +64,19 @@ module.exports = function(db) {
 	app.use(function(req, res, next) {  // hbkk dir route next #1
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
         // see http://expressjs.com/api.html
-        o.o('hbkkk 3 dir app.use ' +
-            ' req.method ['+req.method + ']' +
-            ' req.res.locals.url [' + req.res.locals.url + ']' +
-            ' res.locals.url [' + res.locals.url + ']' +
-            ' res.originalUrl [' + req.originalUrl + ']' +
-            ' res.subdomains [' + req.subdomains+ ']' +
-            ' req.protocol ['+req.protocol + ']' +
-            ' req.path ['+req.path + ']' +
-            ' req.hostname ['+req.hostname + ']' +
-            ' req.baseUrl ['+req.baseUrl + ']' +
-            ' req.params ['+req.params + ']' +
-            ' req.params[0] ['+req.params[0] + ']' +
-            ' req.get(host) ['+ req.get('host') + ']'
+        o.o('======== hbkkk 3 dir app.use ' +
+            ' req.method 	'+req.method + '	' +
+            ' req.res.locals.url 	' + req.res.locals.url + '	' +
+            ' res.locals.url 	' + res.locals.url + '	' +
+            ' res.originalUrl 	' + req.originalUrl + '	' +
+            ' res.subdomains 	' + req.subdomains+ '	' +
+            ' req.protocol 	'+req.protocol + '	' +
+            ' req.path 	'+req.path + '	' +
+            ' req.hostname 	'+req.hostname + '	' +
+            ' req.baseUrl 	'+req.baseUrl + '	' +
+            ' req.params 	'+req.params + '	' +
+            ' req.params	0	 	'+req.params[0] + '  ' +
+            ' req.get(host) 	'+ req.get('host') + '	'
         );
         //o.o ('hbkk utilClass.getClass(req): ' + utilClass.getClass(req));
 		next();
