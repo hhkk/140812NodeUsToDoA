@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Module dependencies.
+ * Module  hbkk dir core
  */
 exports.index = function(req, res) {
 	res.render('index', {

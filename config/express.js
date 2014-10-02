@@ -41,7 +41,7 @@ module.exports = function(db) {
     // HBKK  adds
     app.use(function(req, res, next){
         //o.o(new Date().toUTCString() + '-- hbkk app.use function %s %s', req.method, req.url);
-        //console.log('-- hbkk app.use function %s %s', req.method, req.url);
+       // o.o('-- hbkk app.use function %s %s', req.method, req.url);
         next();         // jump to next route handler
     });
 
@@ -97,7 +97,7 @@ module.exports = function(db) {
 	app.engine('server.view.html', consolidate[config.templateEngine]);
 
 	// Set views path and view engine
-	app.set('view engine', 'server.view.html');
+	app.set('view engine', 'server.view.html');   // hbkk dir view extension
 	app.set('views', './app/views');
 
 	// Environment dependent middleware

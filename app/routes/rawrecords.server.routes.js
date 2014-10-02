@@ -16,14 +16,10 @@ module.exports = function(app) {
 //        });
 
 	// Rawrecords Routes
-    app.route('/rawrecords')
-        .get(rawrecords.list)
-        .post(users.requiresLogin, rawrecords.create);
+	app.route('/rawrecords')
+		.get(rawrecords.list)
+		.post(users.requiresLogin, rawrecords.create);
 
-//    app.route('/rawrecords')  // hbkkk
-//        .get(rawrecords.list)
-//        .post(users.requiresLogin, rawrecords.create);
-//
     // hbkk dir rawrecordscust route test
 
     app.route('/rawrecordscust')

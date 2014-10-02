@@ -30,7 +30,7 @@ var db = mongoose.connect(config.db, function(err) {
     }
 });
 
-projRequire('/public/lib/ustodo/o.js');
+projRequire('/public/lib/ustodo/o');
 // Init the express application
 
 // BEGIN: EXPERIMENT WITH MY OWN EXPORTS

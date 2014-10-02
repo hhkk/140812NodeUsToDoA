@@ -1,9 +1,12 @@
 'use strict';
 
 //Setting up route
+console.log ('hbkk dir inside rawrecords.client.routes.js');
 angular.module('rawrecords').config(['$stateProvider',
 	function($stateProvider) {
-		// Rawrecords state routing
+        console.log ('hbkk dir inside rawrecords.client.routes.js INSIDE function($stateProvider');
+
+        // Rawrecords state routing
 		$stateProvider.
 		state('angview-rawrecord', {
 			url: '/angview-rawrecord',

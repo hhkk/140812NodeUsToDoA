@@ -2,11 +2,11 @@
 
 module.exports = {
 	app: {
-		title: 'UsToDo',
+		title: 'UsToDo',  // hbkk dir metadata like app title all.js
 		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
-	port: process.env.PORT || 3000,
+	port: process.env.PORT || 3000  ,  // hbkk dir port number
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',
