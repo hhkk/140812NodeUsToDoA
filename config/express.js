@@ -97,7 +97,8 @@ module.exports = function(db) {
 	app.engine('server.view.html', consolidate[config.templateEngine]);
 
 	// Set views path and view engine
-	app.set('view engine', 'server.view.html');   // hbkk dir view extension
+	app.set('view e' +
+        'ngine', 'server.view.html');   // hbkk dir view extension
 	app.set('views', './app/views');
 
 	// Environment dependent middleware
@@ -153,7 +154,7 @@ module.exports = function(db) {
 	app.use(express.static(path.resolve('./public')));
 
 	// Globbing routing files
-	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
+	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {   // hbkkroot 1
 		require(path.resolve(routePath))(app);
 	});
 
@@ -173,6 +174,7 @@ module.exports = function(db) {
 
 	// Assume 404 since no middleware responded
 	app.use(function(req, res) {
+        o.o ("in express.js 404 error");
 		res.status(404).render('404', {
 			url: req.originalUrl,
 			error: 'Not Found'

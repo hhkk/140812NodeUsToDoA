@@ -19,7 +19,7 @@ var RawrecordSchema = new Schema({
 //    hbkk
     hkproperty: {
         type: String,
-        default: '',
+        default: 'hkproperty_default',
         //required: 'Please fill Rawrecord hkproperty',
         trim: true
     },

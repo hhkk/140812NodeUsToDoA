@@ -12,10 +12,14 @@ angular.module('rawrecords').config(['$stateProvider',
 			url: '/angview-rawrecord',
 			templateUrl: 'modules/rawrecords/views/angview-rawrecord.client.view.html'
 		}).
-		state('listRawrecords', {
-			url: '/rawrecords', // hbkkk
-			templateUrl: 'modules/rawrecords/views/list-rawrecords.client.view.html'
-		}).
+//            state('listRawrecords', {
+//                url: '/rawrecords', // hbkkk
+//                templateUrl: 'modules/rawrecords/views/list-rawrecords.client.view.html'
+//            }).
+            state('listRawrecordsccc', {
+                url: '/rawrecordshk', // hbkkk http://localhost:3000/#!/rawrecordshk
+                templateUrl: 'modules/rawrecords/views/list-rawrecords.client.view.html'
+            }).
 		state('createRawrecord', {
 			url: '/rawrecords/create',
 			templateUrl: 'modules/rawrecords/views/create-rawrecord.client.view.html'

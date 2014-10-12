@@ -102,6 +102,9 @@ exports.rawrecordByID = function (req, res, next, id) {
         if (err) return next(err);
         if (!rawrecord) return next(new Error('Failed to load Rawrecord ' + id));
         req.rawrecord = rawrecord;
+        //req.rawrecord = {hi: 'joey'};
+        o.o ('hbkk writing hi joey hbkk ' + req.rawrecord);
+
         next();
     });
 };

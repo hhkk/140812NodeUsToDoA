@@ -35,7 +35,7 @@ module.exports = function() {
 	 * Add our server node extensions
 	 */
     // hbkk dir init.js
-	require.extensions['.server.controller.js'] = require.extensions['.js'];
+	require.extensions['.server.controller.js'] = require.extensions['.js'];    // hbkk dir require extension
 	require.extensions['.server.model.js'] = require.extensions['.js'];
 	require.extensions['.server.routes.js'] = require.extensions['.js'];
 };

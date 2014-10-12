@@ -2,8 +2,6 @@
 
 module.exports = function(app) {
 	// Root routing
-    var hktestRequire = projRequire('/app/controllers/hktestRequire');
-    var core = projRequire('/app/controllers/core');  // hbkk dir core
-    app.route('/hktestRequire').get(hktestRequire.index);      // hbkk dir route
-    app.route('/').get(core.index);        // hbkk dir core
+    var core = projRequire('/app/controllers/core');  // hbkk dir core see init.js so really core.server.controller.js
+    app.route('/').get(core.index); // // hbkkroot 2 hbkk dir by init.js really core.server.controller.js
 };
