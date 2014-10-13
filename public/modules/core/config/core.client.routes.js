@@ -10,8 +10,8 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		$stateProvider.
 		state('home', {
 			url: '/',
-			//templateUrl: 'modules/core/views/home.client.view.html'         // hbkkroot 5 first client side
-            template: 'homehktemplateurlx!!!'                        // alternate
+			templateUrl: 'modules/core/views/home.client.view.html'         // hbkkroot 5 first client side
+            //template: 'homehktemplateurlx!!!'                        // alternate
 		});
 
 
@@ -19,10 +19,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         // ?  http://localhost:3000/#!/homehk
         // from http://localhost:3000/homehk I see /homehk is not a valid path.
         $stateProvider.
-            state('homehk', {
-                url: '/hk',    // http://localhost:3000/#!/hk
+            state('homehkjoey', {
+                url: '/hkjoey',    // http://localhost:3000/#!/hkjoey
                 //templateUrl: 'modules/core/views/homehk.client.view.html'
-                template: 'homehktemplateurlx!!!'
+                template: 'homehktemplateurlx <a hrefhttp://localhost:3000/#!/hkjoey!!!'
             });
 
 
